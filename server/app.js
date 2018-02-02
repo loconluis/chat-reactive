@@ -6,7 +6,7 @@ const wss = new Websocket.Server({ port: 8989 });
 const users = [];
 // broadcast data to all the sockets
 const broadcast = (data, ws) => {
-  wss.clients.forEach(clients => {
+  wss.clients.forEach(client => {
     if (client.readyState === Websocket.OPEN && client !== ws) {
       client.send(JSON.stringify(data))
     }
@@ -43,7 +43,7 @@ wss.on('connection', (ws) => {
     }
   })
   // when close de socket
-  ws.on('CLOSE', () => {
+  ws.on('close', () => {
     users.splice(index, 1);
     broadcast({
       type: 'USERS_LIST',
