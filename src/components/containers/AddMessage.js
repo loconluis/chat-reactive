@@ -1,1 +1,20 @@
-<section id="new-message">New Message</section>
+import React from 'react';
+
+export default (props) => {
+  let input;
+
+  return (
+    <section id="new-message">
+      <input
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            props.dispatch(input.value, 'Me');
+            input.value = '';
+          }
+        }}
+        type="text"
+        ref={node => { input = node }}
+      />
+    </section>
+  );
+};
