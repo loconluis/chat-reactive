@@ -8,6 +8,7 @@ import { createStore } from 'redux';
 
 import chat from './reducers';
 import { addUser } from './actions';
+import setUpSocket from './sockets';
 
 const store = createStore(chat);
 store.dispatch(addUser('Me'));
