@@ -9,7 +9,7 @@ export default (state = [], action) => {
         name: action.name,
         id: action.id,
       }]);
-    case types.USER_LIST:
+    case types.USERS_LIST:
       return action.users;
     default:
       return state;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // components
-import SideBar from './containers/Sidebar';
-import MessagesList from './containers/MessagesList';
-import AddMessage from './containers/AddMessage';
+import SideBar from './Sidebar';
+import MessagesList from './MessagesList';
+import AddMessage from './AddMessage';
 // styles
 import '../styles/App.css';
 

@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+// action
+import { addMessage } from '../actions/index'
 
-export default (props) => {
+const AddMessage = (props) => {
   let input;
 
   return (
@@ -18,3 +21,9 @@ export default (props) => {
     </section>
   );
 };
+
+const mapDispatchToProps = dispatch => ({
+  dispatch: (message, author) => { dispatch(addMessage(message, author)) }
+})
+
+export default connect(undefined, mapDispatchToProps)(AddMessage)

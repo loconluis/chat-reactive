@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 // components
 import Messages from './Messages';
 
-export default ({ messages }) => {
+const MessagesList = ({ messages }) => {
   return (
     <section id="messages-list">
       <ul>
@@ -19,3 +20,8 @@ export default ({ messages }) => {
   );
 };
 
+const mapStateToprops = state => ({
+  messages: state.messages
+})
+
+export default connect(mapStateToprops)(MessagesList)
